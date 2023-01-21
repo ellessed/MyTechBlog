@@ -33,7 +33,3 @@ Comment.belongsTo(User, {
 });
 
 module.exports = { User, Post, Comment };
-
-//comment belongs to a user
-
-//comment belongs to a post
