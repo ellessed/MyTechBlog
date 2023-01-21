@@ -1,6 +1,8 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 
+const routes = require("./controllers");
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -12,15 +14,7 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
-
-// here is where I'd put the routes if I had any
-app.get("/", (req, res) => {
-  try {
-    res.status(200).json({ message: "Welcome" });
-  } catch (error) {
-    res.status(500).json({ error: "Something went wrong" });
-  }
-});
+app.use(routes);
 
 const init = async () => {
   try {
