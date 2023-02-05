@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Ellesse",
+    "password": "hello23!",
+    "email": "ellesse@email.com"
+  },
+  {
+    "name": "Joseph",
+    "password": "macbook123!",
+    "email": "joseph@email.com"
+  },
+  {
+    "name": "caprice",
+    "password": "password123!",
+    "email": "caprice@email.com"
+  },
+  {
+    "name": "Leonie",
+    "password": "beautiful2000!",
+    "email": "leonie@email.com"
+  },
+  {
+    "name": "techguy",
+    "password": "coding11",
+    "email": "techguy@email.com"
+  },
+  {
+    "name": "john",
+    "password": "helloworld123",
+    "email": "john@email.com"
+  },
+  {
+    "name": "jordan",
+    "password": "test123",
+    "email": "jordan@email.com"
+  },
+  {
+    "name": "bobthebuilder",
+    "password": "mockup4",
+    "email": "bobthebuilder@email.com"
+  },
+  {
+    "name": "susan22",
+    "password": "mockup5",
+    "email": "susan22@email.com"
+  }
+]
