@@ -1,1 +1,14 @@
 <div>Homepage</div>
+
+<h1>Posts</h1>
+<br />
+<hr />
+<br />
+
+{{#each posts as |postData|}}
+
+  <div>Post naame: {{postData.name}}</div>
+
+  {{!-- {{> post}} --}}
+
+{{/each}}
