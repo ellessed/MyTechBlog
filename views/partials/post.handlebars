@@ -1,17 +1,12 @@
 <div class="post">
-  <div class="post-title">POST</div>
+  <div class="post-title">{{name}}</div>
   <div class="post-body">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iure
-    reiciendis repellat perspiciatis, autem quisquam, temporibus veniam earum ab
-    quo suscipit numquam aperiam delectus esse blanditiis commodi reprehenderit
-    inventore quos, fugiat aliquid possimus! Assumenda enim nostrum repudiandae
-    commodi hic, eligendi error fugiat! Repellendus alias ex sed excepturi animi
-    voluptates a!
+    {{description}}
   </div>
+  {{!-- <div>Posted by: {{postData.user_id}}</div> --}}
   <div class="comments-container">
-    {{#each post.comments}}
-    {{!-- this is us rendering a partial --}}
-    {{> comment}}
-    {{/each}}
+    {{!-- {{#each comments as |comment|}}
+comment data
+{{/each}} --}}
   </div>
 </div>
