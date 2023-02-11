@@ -11,6 +11,7 @@ const seedAll = async () => {
   await Post.bulkCreate(postsData);
   await Comment.bulkCreate(commentData);
 
+  console.log("Seeds done");
   process.exit(0);
 };
 
