@@ -1,7 +1,12 @@
 [
   {
     "content": "anything",
-    "user_id": 9,
+    "user_id": 3,
     "post_id": 1
+  },
+  {
+    "content": "something else",
+    "user_id": 9,
+    "post_id": 2
   }
 ]

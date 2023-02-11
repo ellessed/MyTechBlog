@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
     if (!post) res.status(404).json({ message: "Not found!" });
 
     // otherwise, if my request is true, I send back 200-ok and the actual POST that I requested
-    return res.status(200).json();
+    return res.status(200).json(post);
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error });
