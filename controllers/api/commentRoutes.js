@@ -3,11 +3,11 @@ const { Comment, User } = require("../../models");
 const authjs = require("../../utils/auth.js");
 
 // create comment
-router.post("/", authjs, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const commentNew = await Comment.create({
       ...req.body,
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
     });
 
     res.status(200).json(commentNew);
@@ -29,7 +29,8 @@ router.put("/:id", authjs, async (req, res) => {
         user_id: req.session.user_id,
       },
     });
-    if (!commentData) res.status(404).json({ message: "No post has been found with this id!" });
+    if (!commentData)
+      res.status(404).json({ message: "No post has been found with this id!" });
 
     res.status(200).json(commentData);
   } catch (err) {
@@ -45,7 +46,10 @@ router.delete("/:id", authjs, async (req, res) => {
         id: req.params.id,
       },
     });
-    if (!commentData) res.status(404).json({ message: "No comment has been found with this id" });
+    if (!commentData)
+      res
+        .status(404)
+        .json({ message: "No comment has been found with this id" });
 
     res.status(200).json(commentData);
   } catch (err) {
