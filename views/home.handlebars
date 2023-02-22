@@ -1,14 +1,13 @@
-<div>Homepage</div>
-
-<h1>Posts</h1>
-<br />
-<hr />
-<br />
-
-{{#each posts as |postData|}}
-
-  <div>Post naame: {{postData.name}}</div>
-
-  {{!-- {{> post}} --}}
-
+{{#each posts as |post|}}
+  <div class="row mb-4 project">
+    <div class="col-md-5">
+      <h2>
+        <a href="/post/{{post.id}}">{{post.post_title}}</a>
+      </h2>
+      <p>
+        {{post.post_body}}
+      </p>
+      <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+    </div>
+  </div>
 {{/each}}
