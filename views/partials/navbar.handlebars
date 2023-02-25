@@ -1,5 +1,13 @@
-<nav>
-  <div>button</div>
-  <div>button</div>
-  <div>button</div>
-</nav>
+  <body>
+    <header>
+      <nav class="d-flex justify-content-around p-3">
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-primary" href="/profile"> Profile </a>
+       {{#if loggedIn}}
+        <a class="btn btn-primary" href=""> Logout </a>
+        {{else}}
+        <a class="btn btn-primary" href="/login"> Login </a>
+        {{/if}}
+        <a class="btn btn-primary" href="">Signup(c)</a>
+      </nav>
+    </header>

@@ -1,13 +1,28 @@
-{{#each posts as |post|}}
-  <div class="row mb-4 project">
-    <div class="col-md-5">
-      <h2>
-        <a href="/post/{{post.id}}">{{post.name}}</a>
-      </h2>
-      <p>
+<div
+  class="container w-75 d-flex flex-column justify-content-center align-items-center"
+>
+  {{#each posts as |post|}}
+    <div class="post my-5">
+      <div class="post-title my-3 mx-2"><a
+          href="/post/{{post.id}}"
+        >{{post.name}}</a></div>
+      <div class="post-body mx-2">
         {{post.description}}
-      </p>
-      <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+      </div>
+      <div class="mx-2 my-1">
+        Created by:
+        <span class="text-primary">{{post.user.name}} </span>
+        on
+        {{format_date post.date_created}}
+      </div>
+      <div class="comments-container mx-2">
+        <h6 class="m-3">Comments</h6>
+        <div class="comment">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quae
+          eligendi soluta laudantium.
+        </div>
+      </div>
     </div>
-  </div>
-{{/each}}
+  {{/each}}
+
+</div>
