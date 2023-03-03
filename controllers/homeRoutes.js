@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { Post } = require("../models");
+const { Post, User } = require("../models");
 
 // router.get("/", async (req, res) => {
 //try {
@@ -17,9 +17,9 @@ const { Post } = require("../models");
 const router = Router();
 router.get("/", async (req, res) => {
   try {
-    const allPosts = await Post.findAll();
-
-    //const posts = { data: allPosts };
+    const allPosts = await Post.findAll({
+      include: [{ model: User, attributes: ["name"] }],
+    });
 
     const posts = allPosts.map((post) => post.get({ plain: true }));
 
@@ -37,9 +37,12 @@ router.get("/profile", async (req, res) => {
     const currentLoggedInUser = req.session.user_id;
 
     if (currentLoggedInUser) {
-      const posts = await Post.findAll({
-        where: { user_id: currentLoggedInUser },
+      const postsFromDb = await Post.findAll({
+        // where: { user_id: currentLoggedInUser },
+        include: [{ model: User, attributes: ["name"] }],
       });
+
+      const posts = postsFromDb.map((post) => post.get({ plain: true }));
 
       console.log(posts);
 
