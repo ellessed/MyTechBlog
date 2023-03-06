@@ -36,16 +36,20 @@ router.get("/:id", async (req, res) => {
     return res.status(500).json({ error });
   }
 });
+
 // require user logged in with authentication
 // create a post
-router.get("/", auth, async (req, res) => {
+router.post("/", async (req, res) => {
   //we send a request for the post title and body to be populated into the body
 
   postData = {
-    post_title: req.body.post_title,
-    post_body: req.body.post_body,
+    name: req.body.name,
+    description: req.body.description,
     user_id: req.session.user_id,
   };
+
+  console.log(postData);
+
   try {
     const postNew = await Post.create(postData);
     //200 ok reponse is sent which indicates that the request has succeeded

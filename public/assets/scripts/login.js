@@ -1,4 +1,3 @@
-console.log("login");
 // type in your login functionality
 // make a call to your log-in endpoint with the credentials passed in through the form
 const loginFormHandler = async (event) => {
@@ -8,7 +7,7 @@ const loginFormHandler = async (event) => {
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    const response = await fetch("/api/auth/sign-up", {
+    const response = await fetch("/api/auth/log-in", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
@@ -30,7 +29,7 @@ const signupFormHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
 
   if (name && email && password) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/auth", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
       headers: { "Content-Type": "application/json" },
