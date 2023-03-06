@@ -60,31 +60,36 @@ router.post("/", async (req, res) => {
   }
 });
 // edit post
+
+router.put("/:id", async (req, res) => {
+  console.log(req.body);
+  console.log(req.params.id);
+  Post.update(
+    {
+      // All the fields you can update and the data attached to the request body.
+      name: req.body.title,
+      description: req.body.body,
+    },
+    {
+      // Gets a book based on the book_id given in the request parameters
+      where: {
+        id: req.params.id,
+      },
+    }
+  );
+});
 // router.put"/:id", (req, res) => {}
-
 // delete post
-
-// router.delete("/:id", async (req, res) => {
-// delete one product by its `id` value
-// try {
-//   const = await ({
-//     where: {
-//       id: req.params.id,
-//     },
-//   });
-
-//   if (!productInfo) {
-//     res
-//       .status(500)
-//       .json({ message: "Sorry,!" });
-//     return;
-//   }
-
-//   res.status(200).json(productInfo);
-//   console.log("post successfully deleted");
-// } catch (err) {
-//   res.status(500).json(err);
-//   }
-// });
-
+router.delete("/:id", (req, res) => {
+  // Looks for the books based book_id given in the request parameters
+  Post.destroy({
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((deletedpost) => {
+      res.json(deletedpost);
+    })
+    .catch((err) => res.json(err));
+});
 module.exports = router;

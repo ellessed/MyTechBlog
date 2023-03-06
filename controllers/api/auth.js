@@ -72,7 +72,7 @@ router.post("/log-in", async (req, res) => {
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).render("homepage");
+      res.status(200).render("home");
       // res.;
     });
   } else {
