@@ -71,9 +71,10 @@ router.get("/profile", async (req, res) => {
       });
     }
 
-    return res
-      .status(404)
-      .json({ message: "Couldn't find posts for this user" });
+    return res.status(200).render("login");
+
+    // .status(404)
+    // .json({ message: "Couldn't find posts for this user" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ error: "Oops, error!" });
