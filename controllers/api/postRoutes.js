@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
 });
 // edit post
 
-router.put("/:id", authjs, async (req, res) => {
+router.put("/:id", async (req, res) => {
   console.log(req.body);
   console.log(req.params.id);
   Post.update(
@@ -78,7 +78,7 @@ router.put("/:id", authjs, async (req, res) => {
 });
 // router.put"/:id", (req, res) => {}
 // delete post
-router.delete("/:id", authjs, (req, res) => {
+router.delete("/:id", (req, res) => {
   // Looks for the books based book_id given in the request parameters
   Post.destroy({
     where: {
