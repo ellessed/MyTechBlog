@@ -1,12 +1,20 @@
 <div class="post">
-  <div class="post-title">{{name}}</div>
-  <div class="post-body">
-    {{description}}
-  </div>
-  {{!-- <div>Posted by: {{postData.user_id}}</div> --}}
+
   <div class="comments-container">
-    {{!-- {{#each comments as |comment|}}
-comment data
-{{/each}} --}}
+    <div class="post my-5">
+      <div class="post-title my-3 mx-2"><a
+          href="/post/{{id}}"
+        >{{name}}</a></div>
+      <div class="post-body mx-2">
+        {{description}}
+      </div>
+      <div class="mx-2 my-1">
+        Created by:
+        <span class="text-primary">{{user.name}} </span>
+        on
+        {{format_date date_created}}
+      </div>
+
+    </div>
   </div>
 </div>
