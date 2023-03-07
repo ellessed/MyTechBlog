@@ -1,9 +1,7 @@
 const { Router } = require("express");
 const { User, Post, Comment } = require("../../models");
-const auth = require("../../utils/auth");
+const authjs = require("../../utils/auth");
 const router = Router();
-
-// crrud - create, read one, read all,  update delete
 
 //read all
 router.get("/", async (req, res) => {
@@ -61,7 +59,7 @@ router.post("/", async (req, res) => {
 });
 // edit post
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", authjs, async (req, res) => {
   console.log(req.body);
   console.log(req.params.id);
   Post.update(
@@ -80,7 +78,7 @@ router.put("/:id", async (req, res) => {
 });
 // router.put"/:id", (req, res) => {}
 // delete post
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authjs, (req, res) => {
   // Looks for the books based book_id given in the request parameters
   Post.destroy({
     where: {
